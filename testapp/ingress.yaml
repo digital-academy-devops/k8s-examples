@@ -13,6 +13,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: argocd-server
+                name: testapp
                 port:
                   name: http
