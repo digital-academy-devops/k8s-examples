@@ -1,23 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-a
+  name: testapp
   labels:
-    app: nginx
+    app: testapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      app: testapp
   template:
     metadata:
-      name: nginx
+      name: testapp
       labels:
-        app: nginx
+        app: testapp
     spec:
       containers:
         - name: nginx
-          image: k8s.gcr.io/hpa-example
+          image: nginxdemos/hello
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
           resources:
             requests:
               memory: "256Mi"

@@ -7,3 +7,5 @@ resources:
 - namespace.yaml
 - deployment-a.yaml
 - deployment-b.yaml
+- service.yaml
+- ingress.yaml
