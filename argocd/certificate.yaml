@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  dnsNames:
+  - 'argocd.dacdevops.ru'
+  issuerRef:
+    kind: ClusterIssuer
+    name: yc-clusterissuer
+  secretName: argocd-cert

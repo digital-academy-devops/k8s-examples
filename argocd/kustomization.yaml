@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: argocd
+resources:
+- namespace.yaml
+- github.com/argoproj/argo-cd/manifests/core-install?ref=v2.6.7
+- github.com/argoproj/argo-cd/manifests/base/server?ref=v2.6.7
+- certificate.yaml
+- ingress.yaml
+
+patchesStrategicMerge:
+  - deployment-repo-server.yaml
