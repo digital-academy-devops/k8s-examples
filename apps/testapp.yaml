@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: testapp
+spec:
+  project: system
+  source:
+    repoURL: https://github.com/digital-academy-devops/k8s-examples.git
+    targetRevision: main
+    path: testapp
+  destination:
+    name: in-cluster
+    namespace: testapp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

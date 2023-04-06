@@ -8,6 +8,7 @@ resources:
 - github.com/argoproj/argo-cd/manifests/base/server?ref=v2.6.7
 - certificate.yaml
 - ingress.yaml
+- apps.yaml
 
 patchesStrategicMerge:
   - deployment-repo-server.yaml
