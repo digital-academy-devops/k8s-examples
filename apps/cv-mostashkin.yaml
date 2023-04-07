@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: cv-mostashkin
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/digital-academy-devops/docker-example.git
+    targetRevision: main
+    path: deployment/kustomize/overlays/common
+  destination:
+    name: in-cluster
+    namespace: cv-mostashkin
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
