@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: amalkov-devops-final
+  name: amalkov-app
 spec:
   project: default
   source:
