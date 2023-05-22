@@ -10,7 +10,7 @@ spec:
     path: deployment/kustomize/overlays/common
   destination:
     name: in-cluster
-    namespace: amalkov-devops-final
+    namespace: amalkov
   syncPolicy:
     automated:
       prune: true
