@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: abekrenev-devops-final-task
+  name: alin-final-task
 spec:
   project: default
   source:
