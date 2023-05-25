@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: alin-final-task
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/S4B1K24/final-task
+    targetRevision: main
+    path: deployment/kustomize/overlays/common
+  destination:
+    name: in-cluster
+    namespace: alin-final-task
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
