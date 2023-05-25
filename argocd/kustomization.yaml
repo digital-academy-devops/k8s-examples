@@ -10,5 +10,10 @@ resources:
 - ingress.yaml
 - apps.yaml
 
+images:
+  - name: quay.io/argoproj/argocd
+    newName: quay.io/argoproj/argocd
+    newTag: v2.6.7
+
 patchesStrategicMerge:
   - deployment-repo-server.yaml
