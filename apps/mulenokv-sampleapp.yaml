@@ -7,7 +7,7 @@ spec:
   source:
     repoURL: https://github.com/mulenokivan/devops-final-task
     targetRevision: main
-    path: deployment/kustomize/overlays/common
+    path: kustomize/overlays/common
   destination:
     name: in-cluster
     namespace: mulenokv-sampleapp
