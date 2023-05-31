@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sheverev-devops-final-task
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/VladislavSh3/devops-final-task
+    targetRevision: main
+    path: deployment/kustomize/overlays/common
+  destination:
+    name: in-cluster
+    namespace: sheverev-devops-final-task
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
