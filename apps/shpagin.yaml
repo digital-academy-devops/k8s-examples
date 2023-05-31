@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: shpagin-devops-final-task
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/freeBebra/devops-final-task
+    targetRevision: main
+    path: deployment/kustomize/overlays/common
+  destination:
+    name: in-cluster
+    namespace: shpagin-devops-final-task
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
