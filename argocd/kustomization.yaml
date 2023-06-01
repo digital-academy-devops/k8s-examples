@@ -17,3 +17,5 @@ images:
 
 patchesStrategicMerge:
   - deployment-repo-server.yaml
+  - sts-app-controller.yaml
+  - rolebinding.yaml
