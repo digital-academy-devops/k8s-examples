@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: zah-sampleapp
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Minervaa45/DevOps_final
+    targetRevision: main
+    path: deployment/kustomize/overlays/common
+  destination:
+    name: in-cluster
+    namespace: zah-sampleapp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
