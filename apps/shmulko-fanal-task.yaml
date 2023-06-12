@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: shm-sampleapp
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/AlexShmulko/Final-Task.git
+    targetRevision: main
+    path: deployment/kustomize/overlays/common
+  destination:
+    name: in-cluster
+    namespace: shm-sampleapp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
