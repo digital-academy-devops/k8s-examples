@@ -5,7 +5,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://https://github.com/panaglev/sample-app
+    repoURL: https://github.com/panaglev/sample-app
     targetRevision: main
     path: deployment/kustomize/overlays/common
   destination:
