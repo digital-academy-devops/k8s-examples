@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: portnyagin-sampleapp
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/Sunrise9871/sampleapp.git
+    targetRevision: main
+    path: deployment/kustomize/overlays/common
+  destination:
+    name: in-cluster
+    namespace: portnyagin-sampleapp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
