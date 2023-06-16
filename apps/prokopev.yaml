@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prokopev-sampleapp
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/MkJuze01/final-task-devops.git
+    targetRevision: main
+    path: deployment/kustomize/overlays/common
+  destination:
+    name: in-cluster
+    namespace: prokopev-sampleapp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
