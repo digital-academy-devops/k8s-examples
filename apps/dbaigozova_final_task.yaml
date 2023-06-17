@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: dbaigozova-sampleapp
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/daniya-b/devops-final-task
+    targetRevision: main
+    path: deployment/kustomize/overlays/common
+  destination:
+    name: in-cluster
+    namespace: dbaigozova-sampleapp
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
