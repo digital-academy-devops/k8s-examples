@@ -6,8 +6,8 @@ spec:
   project: default
   source:
     repoURL: https://github.com/forma-web/cyrille-backend
-    targetRevision: main
-    path: deployment/overlay/common
+    targetRevision: master
+    path: deployment/overlays/common
   destination:
     name: in-cluster
     namespace: cyrille
