@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: robonen-app
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/forma-web/cyrille-backend
+    targetRevision: main
+    path: deployment/overlay/common
+  destination:
+    name: in-cluster
+    namespace: cyrille
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
